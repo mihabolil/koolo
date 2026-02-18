@@ -37,10 +37,11 @@ var Routes = map[area.ID][]Route{
 	area.BloodMoor:      {{Move(area.RogueEncampment), Clear(area.BloodMoor), Clear(area.DenOfEvil)}},
 	area.ColdPlains:     {{Clear(area.ColdPlains), Clear(area.CaveLevel1), Clear(area.CaveLevel2)}},
 	area.BurialGrounds:  {{Move(area.ColdPlains), Clear(area.BurialGrounds), Clear(area.Crypt), Move(area.BurialGrounds), Clear(area.Mausoleum)}},
-	area.StonyField:     {{Clear(area.StonyField)}},
+	area.StonyField:     {{Clear(area.StonyField), Clear(area.Tristram)}},
 	area.DarkWood:       {{Clear(area.DarkWood), Clear(area.UndergroundPassageLevel1), Clear(area.UndergroundPassageLevel2)}},
-	area.BlackMarsh:     {{Clear(area.BlackMarsh), Clear(area.HoleLevel1), Clear(area.HoleLevel2)}},
+	area.BlackMarsh:     {{Clear(area.BlackMarsh), Clear(area.ForgottenTower), Clear(area.TowerCellarLevel1), Clear(area.TowerCellarLevel2), Clear(area.TowerCellarLevel3), Clear(area.TowerCellarLevel4), Clear(area.TowerCellarLevel5), Clear(area.HoleLevel1), Clear(area.HoleLevel2)}},
 	area.ForgottenTower: {{Move(area.BlackMarsh), Clear(area.ForgottenTower), Clear(area.TowerCellarLevel1), Clear(area.TowerCellarLevel2), Clear(area.TowerCellarLevel3), Clear(area.TowerCellarLevel4), Clear(area.TowerCellarLevel5)}},
+	area.TamoeHighland:  {{Move(area.BlackMarsh), Clear(area.TamoeHighland), Clear(area.PitLevel1), Clear(area.PitLevel2), Clear(area.OuterCloister)}},
 	area.Barracks:       {{Move(area.OuterCloister), Clear(area.Barracks), Clear(area.JailLevel1), Clear(area.JailLevel2), Clear(area.JailLevel3)}},
 	area.Cathedral:      {{Move(area.InnerCloister), Clear(area.Cathedral), Clear(area.CatacombsLevel1), Clear(area.CatacombsLevel2), Clear(area.CatacombsLevel3), Clear(area.CatacombsLevel4)}},
 	//Tristram, Pit, Cows -> terror_zone.go -> NewPit().Run() ect...
@@ -48,8 +49,8 @@ var Routes = map[area.ID][]Route{
 	// Act 2
 	area.SewersLevel1Act2: {{Move(area.LutGholein), Clear(area.SewersLevel1Act2), Clear(area.SewersLevel2Act2), Clear(area.SewersLevel3Act2)}},
 	area.DryHills:         {{Clear(area.DryHills), Clear(area.HallsOfTheDeadLevel1), Clear(area.HallsOfTheDeadLevel2), Clear(area.HallsOfTheDeadLevel3)}},
-	area.FarOasis:         {{Clear(area.FarOasis)}},
-	area.LostCity:         {{Clear(area.LostCity), Clear(area.ValleyOfSnakes), Clear(area.ClawViperTempleLevel1), Clear(area.ClawViperTempleLevel2)}},
+	area.FarOasis:         {{Clear(area.FarOasis), Clear(area.MaggotLairLevel1), Clear(area.MaggotLairLevel2), Clear(area.MaggotLairLevel3)}},
+	area.LostCity:         {{Clear(area.LostCity), Clear(area.AncientTunnels), Clear(area.ValleyOfSnakes), Clear(area.ClawViperTempleLevel1), Clear(area.ClawViperTempleLevel2)}},
 	area.RockyWaste:       {{Move(area.DryHills), Clear(area.RockyWaste), Clear(area.StonyTombLevel1), Clear(area.StonyTombLevel2)}},
 	// TalRashasTombs, AncientTunnels, Stonytomb -> terror_zone.go -> NewPit().Run() ect...
 
@@ -62,7 +63,7 @@ var Routes = map[area.ID][]Route{
 
 	// Act 4
 	area.OuterSteppes:    {{Move(area.ThePandemoniumFortress), Clear(area.OuterSteppes), Clear(area.PlainsOfDespair)}},
-	area.CityOfTheDamned: {{Clear(area.RiverOfFlame), Clear(area.CityOfTheDamned)}},
+	area.CityOfTheDamned: {{Clear(area.RiverOfFlame), Clear(area.CityOfTheDamned)}},//OLD
 	// Diablo -> terror_zone.go -> NewPit().Run() ect...
 
 	// Act 5
@@ -70,6 +71,7 @@ var Routes = map[area.ID][]Route{
 	area.GlacialTrail:       {{Clear(area.GlacialTrail), Clear(area.DrifterCavern)}},
 	area.CrystallinePassage: {{Clear(area.CrystallinePassage), Clear(area.FrozenRiver)}},
 	area.ArreatPlateau:      {{Clear(area.ArreatPlateau), Clear(area.PitOfAcheron)}},
+	area.FrozenTundra:       {{Clear(area.FrozenTundra), Clear(area.InfernalPit)}},
 	area.TheAncientsWay:     {{Clear(area.TheAncientsWay), Clear(area.IcyCellar)}},
 	area.NihlathaksTemple:   {{Clear(area.NihlathaksTemple), Clear(area.HallsOfAnguish), Clear(area.HallsOfPain), Clear(area.HallsOfVaught)}},
 	// Nihlathak, Baal-> terror_zone.go -> NewPit().Run() ect...
