@@ -784,16 +784,22 @@ func removeUsedItems(stash []data.Item, usedItems []data.Item) []data.Item {
 	usedItemMap := make(map[string]int)
 
 	// Populate a map with the count of used items
-	for _, item := range usedItems {
-		usedItemMap[string(item.Name)] += 1 // Assuming 'ID' uniquely identifies items in 'usedItems'
+	for _, itm := range usedItems {
+		usedItemMap[string(itm.Name)] += 1
 	}
 
 	// Filter the stash by excluding used items based on the count in the map
-	for _, item := range stash {
-		if count, exists := usedItemMap[string(item.Name)]; exists && count > 0 {
-			usedItemMap[string(item.Name)] -= 1
+	for _, itm := range stash {
+		if count, exists := usedItemMap[string(itm.Name)]; exists && count > 0 {
+			if qty := isDLCStackedQuantity(itm); qty > 1 {
+				// DLC stacked item: deduct used count from stack, keep the item in the list
+				usedItemMap[string(itm.Name)] -= min(count, qty)
+				remainingItems = append(remainingItems, itm)
+			} else {
+				usedItemMap[string(itm.Name)] -= 1
+			}
 		} else {
-			remainingItems = append(remainingItems, item)
+			remainingItems = append(remainingItems, itm)
 		}
 	}
 
