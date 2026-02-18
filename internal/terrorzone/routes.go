@@ -39,7 +39,7 @@ var Routes = map[area.ID][]Route{
 	area.BurialGrounds:  {{Move(area.ColdPlains), Clear(area.BurialGrounds), Clear(area.Crypt), Move(area.BurialGrounds), Clear(area.Mausoleum)}},
 	area.StonyField:     {{Clear(area.StonyField), Clear(area.Tristram)}},
 	area.DarkWood:       {{Clear(area.DarkWood), Clear(area.UndergroundPassageLevel1), Clear(area.UndergroundPassageLevel2)}},
-	area.BlackMarsh:     {{Clear(area.BlackMarsh), Clear(area.ForgottenTower), Clear(area.TowerCellarLevel1), Clear(area.TowerCellarLevel2), Clear(area.TowerCellarLevel3), Clear(area.TowerCellarLevel4), Clear(area.TowerCellarLevel5), Clear(area.HoleLevel1), Clear(area.HoleLevel2)}},
+	area.BlackMarsh:     {{Clear(area.BlackMarsh), Clear(area.ForgottenTower), Clear(area.TowerCellarLevel1), Clear(area.TowerCellarLevel2), Clear(area.TowerCellarLevel3), Clear(area.TowerCellarLevel4), Clear(area.TowerCellarLevel5), Clear(area.HoleLevel1), Clear(area.HoleLevel2)}},//EDIT
 	area.ForgottenTower: {{Move(area.BlackMarsh), Clear(area.ForgottenTower), Clear(area.TowerCellarLevel1), Clear(area.TowerCellarLevel2), Clear(area.TowerCellarLevel3), Clear(area.TowerCellarLevel4), Clear(area.TowerCellarLevel5)}},
 	area.TamoeHighland:  {{Move(area.BlackMarsh), Clear(area.TamoeHighland), Clear(area.PitLevel1), Clear(area.PitLevel2), Clear(area.OuterCloister)}},
 	area.Barracks:       {{Move(area.OuterCloister), Clear(area.Barracks), Clear(area.JailLevel1), Clear(area.JailLevel2), Clear(area.JailLevel3)}},
@@ -71,7 +71,7 @@ var Routes = map[area.ID][]Route{
 	area.GlacialTrail:       {{Clear(area.GlacialTrail), Clear(area.DrifterCavern)}},
 	area.CrystallinePassage: {{Clear(area.CrystallinePassage), Clear(area.FrozenRiver)}},
 	area.ArreatPlateau:      {{Clear(area.ArreatPlateau), Clear(area.PitOfAcheron)}},
-	area.FrozenTundra:       {{Clear(area.FrozenTundra), Clear(area.InfernalPit)}},
+	area.FrozenTundra:      {{Clear(area.FrozenTundra), Clear(area.InfernalPit)}},
 	area.TheAncientsWay:     {{Clear(area.TheAncientsWay), Clear(area.IcyCellar)}},
 	area.NihlathaksTemple:   {{Clear(area.NihlathaksTemple), Clear(area.HallsOfAnguish), Clear(area.HallsOfPain), Clear(area.HallsOfVaught)}},
 	// Nihlathak, Baal-> terror_zone.go -> NewPit().Run() ect...
